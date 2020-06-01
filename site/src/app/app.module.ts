@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchInputComponent
   ],
   imports: [
     BrowserModule,
