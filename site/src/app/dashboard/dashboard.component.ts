@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WeatherOverviewService } from '../weather-overview.service';
+import { LoadingScreenComponent } from '../loading-screen/loading-screen.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,7 +22,8 @@ export class DashboardComponent implements OnInit {
   loading : boolean = false;
 
   constructor(
-    private WeatherOverviewService : WeatherOverviewService
+    private WeatherOverviewService : WeatherOverviewService,
+    private LoadingScreenComponent : LoadingScreenComponent,
   ) { }
 
   ngOnInit(): void {

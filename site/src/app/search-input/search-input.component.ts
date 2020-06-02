@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  WeatherOverviewService } from '../weather-overview.service';
 
 @Component({
   selector: 'app-search-input',
@@ -6,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit {
-  zipVal: string;
-  constructor() {}
+  
+  public zipVal: string;
+  
+  constructor(
+    private WeatherOverviewService : WeatherOverviewService,
+  ) {}
 
   ngOnInit(): void {}
+
+  onKey(event: any) {
+    this.WeatherOverviewService.zip  = event.target.value;
+    console.log(this.zipVal);
+  }
 }
