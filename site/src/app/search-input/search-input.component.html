@@ -1,2 +1,9 @@
-<input type="text"  (keyup) = "onKey($event)"/>
-<p>{{ zipVal }}</p>
+<input
+  type="text"
+  #zipVal
+  (keyup.enter)="update(zipVal.value)"
+  (blur)="update(zipVal.value)"
+/>
+
+<p>{{ zipVal.value }}</p>
+<p>{{ zip }}</p>
