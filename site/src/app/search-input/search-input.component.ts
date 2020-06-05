@@ -9,9 +9,17 @@ import { WeatherOverviewService } from '../weather-overview.service';
 export class SearchInputComponent implements OnInit {
   private zipVal: any;
   public zip: any;
-  constructor(private WeatherOverviewService: WeatherOverviewService) {}
+  // public data: Array<any> = ;
+
+  constructor(
+    private WeatherOverviewService: WeatherOverviewService
+  ) {
+    this.WeatherOverviewService.myMethod(this.zip);
+  }
 
   ngOnInit(): void {}
+
+
 
   sendData() {
     this.WeatherOverviewService.zip = this.zip;
@@ -22,5 +30,7 @@ export class SearchInputComponent implements OnInit {
 
   update(value: string) {
     this.zip = value;
+    this.WeatherOverviewService.myMethod(this.zip);
+    console.log(this.WeatherOverviewService.zip);
   }
 }

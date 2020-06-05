@@ -9,7 +9,7 @@ import { SearchInputComponent } from '../search-input/search-input.component';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  zip: 11224;
+  zip: string;
 
   weatherData: any;
 
@@ -20,35 +20,44 @@ export class DashboardComponent implements OnInit {
 
   loading: boolean = false;
 
+  // public data: Array<any> = MyData;
+
   constructor(
     private WeatherOverviewService: WeatherOverviewService,
     private LoadingScreenComponent: LoadingScreenComponent,
     private SearchInputComponent: SearchInputComponent
-  ) {}
+  ) {
+    // this.WeatherOverviewService.myMethod$.subscribe((data) => {
+    //     console.log("Data in dashboard component");
+    //     console.log(data); // And he have data here too!
+    //   }
+    // ); 
+  }
 
   ngOnInit(): void {}
 
   showWeather() {
-    this.WeatherOverviewService.getWeatherData().subscribe((data) => {
+   
+    this.WeatherOverviewService.getWeatherData(this.zip).subscribe((data) => {
       console.log(data);
       this.weatherData = data;
     });
   }
 
   displayWeather() {
-    this.SearchInputComponent.sendData();
-    console.log(this.WeatherOverviewService.zip);
-    if (this.WeatherOverviewService.zip == undefined) {
-      console.log(this.WeatherOverviewService.zip);
+    this.zip = this.WeatherOverviewService.zip;
+ 
+    if (this.zip == undefined) { 
       alert('Insert Proper Zip!');
     } else {
-      console.log(this.WeatherOverviewService.zip.length);
       this.showWeather();
-      this.location =
-        this.weatherData.name + ', ' + this.weatherData.sys.country;
+      
+      this.location = this.weatherData.name + ', ' + this.weatherData.sys.country;
       this.description = this.weatherData.weather[0].description.toUpperCase();
       this.temp =
         (((this.weatherData.main.temp - 273.15) * 9) / 5 + 32).toFixed() + ' F';
     }
   }
+
+
 }
