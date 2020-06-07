@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherOverviewService } from '../weather-overview.service';
+import { InputTextModule } from 'primeng/inputtext';
+
 
 @Component({
   selector: 'app-search-input',

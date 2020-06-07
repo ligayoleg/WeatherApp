@@ -9,6 +9,8 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { WeatherOverviewService } from './weather-overview.service';
 
+import {DropdownModule} from 'primeng/dropdown';
+
 @NgModule({
   declarations: [
     AppComponent,

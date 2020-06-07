@@ -1,11 +1,18 @@
 <div id="dashboard">
   <app-search-input></app-search-input>
   <br />
-  <button (click)="displayWeather()">Click</button>
-  <div id="overview">
-    <p>{{ this.location }}</p>
-    <p>{{ this.description }}</p>
-    <p>{{ this.temp }}</p>
-  </div>
+  <button pButton type="button" 
+    class="ui-button-raised ui-button-rounded ui-button-info" 
+    (click)="displayWeather()" label="Submit"><i class="pi pi-check"></i></button>
   
+    
+  
+  <div id="overview" class="p-grid">
+    <!-- <p>{{ this.location }}</p>
+    <p>{{ this.description }}</p>
+    <p>{{ this.temp }}</p> -->
+    <p class="p-col-12">TEXT</p>
+    <p class="p-col-12">TEXT</p>
+    <p class="p-col-12">TEXT</p>
+  </div>
 </div>

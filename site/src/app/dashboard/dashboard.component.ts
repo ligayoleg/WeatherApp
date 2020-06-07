@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { WeatherOverviewService } from '../weather-overview.service';
 import { LoadingScreenComponent } from '../loading-screen/loading-screen.component';
 import { SearchInputComponent } from '../search-input/search-input.component';
+import {ButtonModule} from 'primeng/button';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
