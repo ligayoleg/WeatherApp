@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +19,12 @@ import {DropdownModule} from 'primeng/dropdown';
     SearchInputComponent,
     LoadingScreenComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule,
+    BrowserAnimationsModule
+  ],
   providers: [
     SearchInputComponent,
     LoadingScreenComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { WeatherOverviewService } from '../weather-overview.service';
 import { LoadingScreenComponent } from '../loading-screen/loading-screen.component';
@@ -9,6 +9,7 @@ import {ButtonModule} from 'primeng/button';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  
 })
 export class DashboardComponent implements OnInit {
   zip: string;
